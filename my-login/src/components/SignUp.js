@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "./Header";
 
 const SignUp = () => {
   // States for registration
@@ -68,6 +69,8 @@ const SignUp = () => {
   };
 
   return (
+    <>
+<Header />
     <div className="login-form">
       <div>
         <h1>User Registration</h1>
@@ -110,6 +113,8 @@ const SignUp = () => {
         </button>
       </form>
     </div>
+    </>
+    
   );
 };
 

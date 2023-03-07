@@ -1,14 +1,18 @@
-import React from 'react'
-import Body from './Body'
-import Header from './Header'
+import React from "react";
+import Body from "./Body";
+import Header from "./Header";
 
 const Home = () => {
   return (
-    <div>
-    <Header />
-    <Body />
+    <div className="homee">
+      <div>
+        <Header />
+      </div>
+      <div>
+        <Body />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Header from './Header';
 
 const SignIn = () => {
     const [errorMessages, setErrorMessages] = useState({});
@@ -51,8 +52,15 @@ const SignIn = () => {
       );
   
     // JSX code for login form
-    const renderForm = (
-      <div className="form">
+ 
+  
+    return (
+        <>
+        <Header />
+<div className="app">
+        <div className="login-form">
+          <div className="title">Sign In</div>
+          <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <label>Username </label>
@@ -69,15 +77,11 @@ const SignIn = () => {
           </div>
         </form>
       </div>
-    );
-  
-    return (
-      <div className="app">
-        <div className="login-form">
-          <div className="title">Sign In</div>
-          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+          {isSubmitted ? <div>User is successfully logged in</div> : "renderForm"}
         </div>
       </div>
+        </>
+      
     );
 }
 

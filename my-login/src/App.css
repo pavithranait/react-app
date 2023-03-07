@@ -115,6 +115,29 @@ input[type="submit"]:hover {
   .header{
     display: flex;
     flex-direction: row;
+    width: 100%;
+    text-decoration: none;
+    
+  }
+  .header-home{
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  .header-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+    margin-left: 75%;
+   
+  
+  }
+  .header-link h2{
+    margin: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+  .link {
+    color: #FFF;
   }
