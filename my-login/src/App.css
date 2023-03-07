@@ -141,3 +141,12 @@ input[type="submit"]:hover {
   .link {
     color: #FFF;
   }
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }

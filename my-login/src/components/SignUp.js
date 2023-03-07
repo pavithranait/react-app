@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 
 const SignUp = () => {
@@ -10,11 +10,27 @@ const SignUp = () => {
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
+  const [data, setData] = useState("");
+  useEffect(() => {
+      
+    fetchApi();
+    console.log(data)
+  }, [data]);
+  const fetchApi = async () => {
+    const response = await fetch("http://127.0.0.1:3000/login");
+    const json = await response.json();
+    setData(json)
+    console.log(json)
+  };
+const errors = {
+  uname: "invalid username",
+  pass: "invalid password",
+};
 
   // Handling the name change
   const handleName = (e) => {
     setName(e.target.value);
-    setSubmitted(false);
+    setData(e.target.value);
   };
 
   // Handling the email change
