@@ -11,9 +11,10 @@ const Home = () => {
    
       <div>
         <Header />
+
       </div>
       <div>
-        <Body />
+         <FileUpload /> 
       </div>
     </div>
     

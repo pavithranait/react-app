@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios"
 import Header from "./Header";
 
 const SignUp = () => {
@@ -51,6 +52,12 @@ const errors = {
     if (name === "" || email === "" || password === "") {
       setError(true);
     } else {
+        axios
+      .post("http://127.0.0.1:3000/register", { name, email, password })
+      .then(response => {
+        console.log(response)
+        // Handle response
+      })
       setSubmitted(true);
       setError(false);
     }

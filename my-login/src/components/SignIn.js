@@ -95,26 +95,37 @@
 // export default SignIn;
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import FileUpload from "./FileUpload"
+import Header from "./Header"
 
 function SignIn() {
+    const navigate = useNavigate();
   const handleSubmit = e => {
     // Prevent the default submit and page reload
     e.preventDefault()
+    
 
     // Handle validations
     axios
       .post("http://127.0.0.1:3000/login", { email, password })
       .then(response => {
         console.log(response)
+        console.log(response.data.token)
+        localStorage.setItem("key", response.data.token);
         // Handle response
       })
+    //   navigate("/")
+      
+      
   }
 
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   return (
     <div>
-      <form action="" id="login" method="post" onSubmit={handleSubmit}>
+    <Header />
+      <form action="/dashboard" id="login" method="post" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <p className="item">
           <label for="email"> Email </label>
